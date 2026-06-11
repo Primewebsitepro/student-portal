@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Study Portal – Wireframe Mockup</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Courier New', monospace; background: #f0f0f0; color: #222; }
+
+  /* NAV */
+  .nav-page { margin: 30px auto 10px; max-width: 1100px; }
+  .nav-page h2 { font-size: 13px; color: #888; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+
+  /* PAGE WRAPPER */
+  .page {
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    border: 2px solid #bbb;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 3px 3px 0 #ccc;
+  }
+
+  /* TOPBAR */
+  .topbar {
+    background: #2c2c2c;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+  }
+  .topbar .logo { font-size: 18px; font-weight: bold; letter-spacing: 1px; }
+  .topbar .nav-links span {
+    display: inline-block;
+    margin-left: 20px;
+    border: 1px solid #888;
+    padding: 4px 12px;
+    border-radius: 2px;
+    font-size: 12px;
+    color: #ccc;
+    cursor: pointer;
+  }
+  .topbar .nav-links span.active {
+    background: #fff;
+    color: #2c2c2c;
+    font-weight: bold;
+  }
+
+  /* HERO */
+  .hero {
+    background: #e8e8e8;
+    border-bottom: 2px dashed #bbb;
+    padding: 60px 40px;
+    text-align: center;
+  }
+  .hero .badge {
+    display: inline-block;
+    border: 1px dashed #999;
+    padding: 4px 14px;
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 16px;
+    border-radius: 20px;
+  }
+  .hero h1 { font-size: 32px; margin-bottom: 12px; }
+  .hero p { color: #666; font-size: 14px; margin-bottom: 24px; font-family: sans-serif; }
+  .hero .btns span {
+    display: inline-block;
+    border: 2px solid #333;
+    padding: 10px 28px;
+    margin: 0 8px;
+    border-radius: 2px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .hero .btns span.primary { background: #2c2c2c; color: #fff; }
+
+  /* SECTION LABEL */
+  .section-label {
+    padding: 30px 40px 10px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #999;
+    text-transform: uppercase;
+    border-bottom: 1px dashed #e0e0e0;
+  }
+
+  /* GRID */
+  .grid { display: grid; padding: 24px 40px; gap: 20px; }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+
+  /* CARD */
+  .card {
+    border: 1.5px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    background: #fafafa;
+  }
+  .card .icon-box {
+    width: 44px; height: 44px;
+    background: #ddd;
+    border: 1px dashed #bbb;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .card h3 { font-size: 14px; margin-bottom: 6px; }
+  .card p { font-size: 12px; color: #888; font-family: sans-serif; line-height: 1.5; }
+  .card .tag {
+    display: inline-block;
+    background: #e8e8e8;
+    border: 1px solid #ccc;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: #666;
+  }
+
+  /* ANNOUNCEMENT BAR */
+  .announce {
+    background: #fffbe6;
+    border-top: 1px solid #e6c200;
+    border-bottom: 1px solid #e6c200;
+    padding: 10px 40px;
+    font-size: 12px;
+    color: #7a6000;
+    font-family: sans-serif;
+  }
+  .announce span { font-weight: bold; margin-right: 8px; }
+
+  /* FOOTER */
+  .footer {
+    background: #2c2c2c;
+    color: #aaa;
+    padding: 20px 40px;
+    font-size: 11px;
+    display: flex;
+    justify-content: space-between;
+    font-family: sans-serif;
+  }
+
+  /* AUTH PAGE */
+  .auth-wrap {
+    display: flex;
+    min-height: 420px;
+  }
+  .auth-left {
+    flex: 1;
+    background: #e8e8e8;
+    padding: 60px 40px;
+    border-right: 2px dashed #ccc;
+  }
+  .auth-left h2 { font-size: 22px; margin-bottom: 10px; }
+  .auth-left p { font-size: 12px; color: #777; font-family: sans-serif; }
+  .auth-right {
+    flex: 1;
+    padding: 50px 40px;
+  }
+  .auth-right h3 { font-size: 18px; margin-bottom: 24px; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 11px; color: #888; margin-bottom: 4px; letter-spacing: 1px; text-transform: uppercase; }
+  .form-group .input-box {
+    width: 100%;
+    border: 1.5px solid #ccc;
+    border-radius: 2px;
+    padding: 10px 12px;
+    font-size: 13px;
+    background: #f9f9f9;
+    color: #999;
+    font-family: 'Courier New', monospace;
+  }
+  .form-group .input-box.filled { color: #333; }
+  .btn-full {
+    width: 100%;
+    background: #2c2c2c;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+    margin-top: 6px;
+  }
+  .link-row { font-size: 11px; color: #888; margin-top: 14px; font-family: sans-serif; text-align: center; }
+  .link-row a { color: #333; text-decoration: underline; }
+
+  /* DASHBOARD */
+  .dash-wrap { display: flex; min-height: 500px; }
+  .sidebar {
+    width: 220px;
+    background: #2c2c2c;
+    color: #ccc;
+    padding: 30px 0;
+    flex-shrink: 0;
+  }
+  .sidebar .s-user {
+    padding: 0 20px 24px;
+    border-bottom: 1px solid #444;
+    margin-bottom: 16px;
+  }
+  .sidebar .avatar {
+    width: 48px; height: 48px;
+    background: #555;
+    border-radius: 50%;
+    margin-bottom: 8px;
+    border: 2px dashed #777;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  .sidebar .s-name { font-size: 13px; font-weight: bold; color: #eee; }
+  .sidebar .s-role { font-size: 10px; color: #888; }
+  .sidebar ul { list-style: none; }
+  .sidebar ul li {
+    padding: 10px 20px;
+    font-size: 12px;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+  }
+  .sidebar ul li.active {
+    background: #3a3a3a;
+    border-left: 3px solid #fff;
+    color: #fff;
+  }
+  .sidebar ul li:hover { background: #383838; }
+  .dash-main { flex: 1; padding: 30px; background: #f5f5f5; }
+  .dash-main h2 { font-size: 18px; margin-bottom: 6px; }
+  .dash-main .sub { font-size: 12px; color: #888; margin-bottom: 20px; font-family: sans-serif; }
+  .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+  .stat-card {
+    background: #fff;
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    padding: 16px;
+    text-align: center;
+  }
+  .stat-card .num { font-size: 28px; font-weight: bold; }
+  .stat-card .lbl { font-size: 10px; color: #999; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; font-family: sans-serif; }
+  .recent-table {
+    background: #fff;
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .recent-table .t-head {
+    background: #eee;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 10px 16px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #888;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ddd;
+  }
+  .recent-table .t-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 12px 16px;
+    font-size: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    font-family: sans-serif;
+    align-items: center;
+  }
+  .recent-table .t-row:last-child { border-bottom: none; }
+  .badge-pill {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: bold;
+  }
+  .badge-green { background: #e6f4ea; color: #2e7d32; border: 1px solid #a5d6a7; }
+  .badge-yellow { background: #fffde7; color: #f57f17; border: 1px solid #ffe082; }
+  .badge-gray { background: #f5f5f5; color: #888; border: 1px solid #ddd; }
+
+  /* COURSES PAGE */
+  .search-bar {
+    padding: 20px 40px;
+    display: flex;
+    gap: 12px;
+    border-bottom: 1px dashed #ddd;
+    background: #fafafa;
+  }
+  .search-bar .s-input {
+    flex: 1;
+    border: 1.5px solid #ccc;
+    padding: 10px 14px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Courier New', monospace;
+    color: #999;
+  }
+  .search-bar .s-btn {
+    background: #2c2c2c;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 2px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .filter-row {
+    padding: 14px 40px;
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px dashed #ddd;
+    background: #fff;
+    flex-wrap: wrap;
+  }
+  .filter-chip {
+    border: 1.5px solid #ccc;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    cursor: pointer;
+    font-family: sans-serif;
+  }
+  .filter-chip.active { background: #2c2c2c; color: #fff; border-color: #2c2c2c; }
+
+  /* VIDEO PAGE */
+  .video-wrap { display: grid; grid-template-columns: 2fr 1fr; min-height: 480px; }
+  .video-main { padding: 30px; border-right: 1px dashed #ddd; }
+  .video-placeholder {
+    background: #222;
+    border: 2px dashed #555;
+    border-radius: 4px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  .video-placeholder .play { font-size: 48px; color: #555; margin-bottom: 10px; }
+  .video-sidebar { padding: 20px; background: #fafafa; }
+  .video-sidebar h4 { font-size: 12px; letter-spacing: 1px; color: #888; text-transform: uppercase; margin-bottom: 14px; }
+  .vid-item {
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    align-items: flex-start;
+  }
+  .vid-thumb {
+    width: 64px; height: 44px;
+    background: #ddd;
+    border: 1px dashed #bbb;
+    border-radius: 2px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    color: #aaa;
+  }
+  .vid-info h5 { font-size: 11px; margin-bottom: 4px; line-height: 1.4; }
+  .vid-info span { font-size: 10px; color: #aaa; }
+
+  /* PDF PAGE */
+  .pdf-row {
+    display: flex;
+    align-items: center;
+    padding: 14px 40px;
+    border-bottom: 1px solid #f0f0f0;
+    gap: 14px;
+    font-family: sans-serif;
+  }
+  .pdf-icon {
+    width: 40px; height: 40px;
+    background: #ffebee;
+    border: 1px solid #ef9a9a;
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .pdf-info { flex: 1; }
+  .pdf-info h4 { font-size: 13px; margin-bottom: 2px; }
+  .pdf-info span { font-size: 11px; color: #aaa; }
+  .pdf-dl {
+    border: 1.5px solid #333;
+    padding: 6px 16px;
+    border-radius: 2px;
+    font-size: 11px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  /* ZOOM */
+  .zoom-card {
+    border: 1.5px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .zoom-badge {
+    background: #e3f2fd;
+    border: 1px solid #90caf9;
+    border-radius: 4px;
+    padding: 10px 16px;
+    text-align: center;
+    flex-shrink: 0;
+    width: 80px;
+  }
+  .zoom-badge .zdate { font-size: 22px; font-weight: bold; color: #1565c0; }
+  .zoom-badge .zmon { font-size: 11px; color: #1565c0; }
+  .zoom-details { flex: 1; }
+  .zoom-details h4 { font-size: 14px; margin-bottom: 4px; }
+  .zoom-details p { font-size: 12px; color: #888; font-family: sans-serif; }
+  .zoom-join {
+    background: #0070f3;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 2px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+  }
+
+  /* ADMIN */
+  .admin-topbar {
+    background: #1a1a2e;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+  }
+  .admin-topbar .logo { font-size: 15px; font-weight: bold; color: #e0e0ff; letter-spacing: 1px; }
+  .admin-wrap { display: flex; min-height: 500px; }
+  .admin-sidebar {
+    width: 200px;
+    background: #16213e;
+    color: #aaa;
+    padding: 20px 0;
+    flex-shrink: 0;
+  }
+  .admin-sidebar ul { list-style: none; }
+  .admin-sidebar ul li {
+    padding: 10px 20px;
+    font-size: 12px;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+  }
+  .admin-sidebar ul li.active {
+    background: #0f3460;
+    border-left: 3px solid #e94560;
+    color: #fff;
+  }
+  .admin-main { flex: 1; padding: 30px; background: #f5f5f5; }
+  .admin-stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+  .admin-stat-card {
+    background: #fff;
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    padding: 16px;
+    border-left: 4px solid #2c2c2c;
+  }
+  .admin-stat-card:nth-child(1) { border-left-color: #0070f3; }
+  .admin-stat-card:nth-child(2) { border-left-color: #2e7d32; }
+  .admin-stat-card:nth-child(3) { border-left-color: #f57f17; }
+  .admin-stat-card:nth-child(4) { border-left-color: #e94560; }
+  .admin-stat-card .num { font-size: 26px; font-weight: bold; }
+  .admin-stat-card .lbl { font-size: 10px; color: #999; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; font-family: sans-serif; }
+  .admin-table { background: #fff; border: 1.5px solid #ddd; border-radius: 4px; overflow: hidden; }
+  .admin-table .t-head {
+    background: #eee;
+    display: grid;
+    grid-template-columns: 0.4fr 2fr 1.2fr 1fr 1fr 1fr;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #888;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ddd;
+  }
+  .admin-table .t-row {
+    display: grid;
+    grid-template-columns: 0.4fr 2fr 1.2fr 1fr 1fr 1fr;
+    padding: 12px 16px;
+    font-size: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    font-family: sans-serif;
+    align-items: center;
+  }
+  .admin-table .t-row:last-child { border-bottom: none; }
+  .action-btn {
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 2px 10px;
+    border-radius: 2px;
+    font-size: 10px;
+    margin-right: 4px;
+    cursor: pointer;
+  }
+  .action-btn.edit { border-color: #0070f3; color: #0070f3; }
+  .action-btn.del { border-color: #e94560; color: #e94560; }
+
+  /* CONTACT */
+  .contact-wrap { display: grid; grid-template-columns: 1fr 1.4fr; min-height: 400px; }
+  .contact-info { background: #2c2c2c; color: #ccc; padding: 50px 40px; }
+  .contact-info h2 { color: #fff; font-size: 20px; margin-bottom: 12px; }
+  .contact-info p { font-size: 12px; color: #aaa; margin-bottom: 28px; font-family: sans-serif; line-height: 1.6; }
+  .contact-detail { margin-bottom: 14px; font-size: 12px; font-family: sans-serif; }
+  .contact-detail span { display: block; color: #888; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+  .contact-form { padding: 40px; }
+  .contact-form h3 { font-size: 16px; margin-bottom: 20px; }
+
+  /* MOBILE NOTE */
+  .mobile-note {
+    background: #fff8e1;
+    border: 1px dashed #f0c040;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 11px;
+    color: #856404;
+    font-family: sans-serif;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  /* PAGE TITLE */
+  .page-title-bar {
+    background: #f9f9f9;
+    border-bottom: 1.5px dashed #ddd;
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .page-title-bar h2 { font-size: 16px; }
+  .page-title-bar .breadcrumb { font-size: 11px; color: #aaa; font-family: sans-serif; }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px dashed #ddd; margin: 0; }
+
+  /* LABEL NAV */
+  .screen-nav {
+    position: sticky;
+    top: 0;
+    background: #1a1a2e;
+    z-index: 100;
+    padding: 10px 30px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .screen-nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 11px;
+    padding: 4px 12px;
+    border: 1px solid #444;
+    border-radius: 20px;
+    font-family: 'Courier New', monospace;
+  }
+  .screen-nav a:hover { background: #333; color: #fff; }
+  .screen-nav .title { color: #e0e0ff; font-size: 13px; font-weight: bold; margin-right: 10px; align-self: center; }
+</style>
+</head>
+<body>
+
+<!-- STICKY NAV -->
+<nav class="screen-nav">
+  <span class="title">Study Portal — Wireframe</span>
+  <a href="#home">Home</a>
+  <a href="#login">Login</a>
+  <a href="#register">Register</a>
+  <a href="#dashboard">Dashboard</a>
+  <a href="#courses">Courses</a>
+  <a href="#notes">Notes/PDF</a>
+  <a href="#videos">Videos</a>
+  <a href="#zoom">Live Classes</a>
+  <a href="#contact">Contact</a>
+  <a href="#admin">Admin Panel</a>
+</nav>
+
+<!-- ===================== HOME PAGE ===================== -->
+<div id="home" class="nav-page"><h2>Screen 1 — Home / Landing Page</h2></div>
+<div class="page">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="logo">📚 StudyPortal</div>
+    <div class="nav-links">
+      <span class="active">Home</span>
+      <span>Courses</span>
+      <span>Notes</span>
+      <span>Videos</span>
+      <span>Live Classes</span>
+      <span>Contact</span>
+      <span style="background:#e94560;border-color:#e94560;color:#fff;">Login</span>
+    </div>
+  </div>
+
+  <!-- Announcement bar -->
+  <div class="announce">
+    <span>📢 Announcement:</span> New batch starting June 15 — Register now to secure your seat!
+    &nbsp;&nbsp;|&nbsp;&nbsp; Summer Exam Notes for Class 10 are now available for download.
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="badge">WordPress-Powered Learning Platform</div>
+    <h1>Learn Smarter,<br/>Study Better.</h1>
+    <p>Access notes, watch lectures, download PDFs, and join live Zoom classes — all in one place.</p>
+    <div class="btns">
+      <span class="primary">Get Started Free</span>
+      <span>Browse Courses</span>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div class="section-label">Core Features</div>
+  <div class="grid grid-3">
+    <div class="card">
+      <div class="icon-box">📄</div>
+      <h3>Study Notes</h3>
+      <p>Subject-wise notes organized by class and topic. Download instantly as PDF.</p>
+      <span class="tag">PDF Download</span>
+    </div>
+    <div class="card">
+      <div class="icon-box">🎥</div>
+      <h3>Video Lectures</h3>
+      <p>Watch embedded YouTube lecture videos organized by subject and chapter.</p>
+      <span class="tag">YouTube Embed</span>
+    </div>
+    <div class="card">
+      <div class="icon-box">🎙️</div>
+      <h3>Live Classes</h3>
+      <p>Join scheduled Zoom live sessions with instructors directly from the portal.</p>
+      <span class="tag">Zoom Integration</span>
+    </div>
+  </div>
+
+  <!-- Course Categories -->
+  <div class="section-label">Course Categories</div>
+  <div class="grid grid-4">
+    <div class="card"><div class="icon-box">➗</div><h3>Mathematics</h3><p>Algebra, Geometry, Calculus</p><span class="tag">24 Notes</span></div>
+    <div class="card"><div class="icon-box">⚗️</div><h3>Science</h3><p>Physics, Chemistry, Biology</p><span class="tag">31 Notes</span></div>
+    <div class="card"><div class="icon-box">🌍</div><h3>Social Studies</h3><p>History, Geography, Civics</p><span class="tag">18 Notes</span></div>
+    <div class="card"><div class="icon-box">🔤</div><h3>English</h3><p>Grammar, Literature, Writing</p><span class="tag">22 Notes</span></div>
+  </div>
+
+  <hr class="divider"/>
+  <div class="footer">
+    <span>© 2024 StudyPortal — All Rights Reserved</span>
+    <span>Privacy Policy &nbsp;|&nbsp; Terms of Use &nbsp;|&nbsp; Contact Us</span>
+  </div>
+</div>
+
+<!-- ===================== LOGIN ===================== -->
+<div id="login" class="nav-page"><h2>Screen 2 — Student Login</h2></div>
+<div class="page">
+  <div class="topbar">
+    <div class="logo">📚 StudyPortal</div>
+    <div class="nav-links"><span>Home</span><span>Courses</span><span class="active">Login</span></div>
+  </div>
+  <div class="auth-wrap">
+    <div class="auth-left">
+      <h2>Welcome Back!</h2>
+      <p>Login to access your personalized dashboard, course materials, and live class schedule.</p>
+      <br/><br/>
+      <div style="border:1px dashed #bbb;padding:20px;border-radius:4px;margin-top:20px;background:#fff;">
+        <p style="font-size:11px;color:#888;font-family:sans-serif;">
+          ✅ Access 500+ study notes<br/><br/>
+          ✅ Download PDFs anytime<br/><br/>
+          ✅ Watch video lectures<br/><br/>
+          ✅ Join Zoom live classes<br/><br/>
+          ✅ Track your progress
+        </p>
+      </div>
+    </div>
+    <div class="auth-right">
+      <h3>Student Login</h3>
+      <div class="form-group">
+        <label>Email Address</label>
+        <div class="input-box">student@example.com</div>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <div class="input-box">••••••••</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:11px;color:#888;margin-bottom:14px;font-family:sans-serif;">
+        <span>☐ Remember me</span>
+        <a href="#" style="color:#333;">Forgot password?</a>
+      </div>
+      <button class="btn-full">LOGIN →</button>
+      <div class="link-row">Don't have an account? <a href="#register">Register here</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== REGISTER ===================== -->
+<div id="register" class="nav-page"><h2>Screen 3 — Student Registration</h2></div>
+<div class="page">
+  <div class="topbar">
+    <div class="logo">📚 StudyPortal</div>
+    <div class="nav-links"><span>Home</span><span>Courses</span><span class="active">Register</span></div>
+  </div>
+  <div class="auth-wrap">
+    <div class="auth-left">
+      <h2>Create Your Account</h2>
+      <p>Register for free and get instant access to all study materials, notes, and live classes.</p>
+      <br/>
+      <div style="background:#fff;border:1px dashed #bbb;padding:20px;border-radius:4px;margin-top:20px;">
+        <p style="font-size:11px;color:#888;font-family:sans-serif;line-height:1.8;">
+          📌 Free to join<br/>
+          📌 No credit card required<br/>
+          📌 Instant access after registration<br/>
+          📌 Cancel anytime
+        </p>
+      </div>
+    </div>
+    <div class="auth-right">
+      <h3>Student Registration</h3>
+      <div class="grid grid-2" style="padding:0;gap:12px;margin-bottom:12px;">
+        <div class="form-group" style="margin:0;">
+          <label>First Name</label>
+          <div class="input-box">First Name</div>
+        </div>
+        <div class="form-group" style="margin:0;">
+          <label>Last Name</label>
+          <div class="input-box">Last Name</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <div class="input-box">email@example.com</div>
+      </div>
+      <div class="form-group">
+        <label>Class / Grade</label>
+        <div class="input-box" style="color:#bbb;">Select Class ▾</div>
+      </div>
+      <div class="grid grid-2" style="padding:0;gap:12px;margin-bottom:12px;">
+        <div class="form-group" style="margin:0;">
+          <label>Password</label>
+          <div class="input-box">••••••••</div>
+        </div>
+        <div class="form-group" style="margin:0;">
+          <label>Confirm Password</label>
+          <div class="input-box">••••••••</div>
+        </div>
+      </div>
+      <button class="btn-full">CREATE ACCOUNT →</button>
+      <div class="link-row">Already registered? <a href="#login">Login here</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== DASHBOARD ===================== -->
+<div id="dashboard" class="nav-page"><h2>Screen 4 — Student Dashboard</h2></div>
+<div class="page">
+  <div class="topbar">
+    <div class="logo">📚 StudyPortal</div>
+    <div class="nav-links"><span>👤 Rahul Sharma</span><span style="color:#e94560;border-color:#e94560;">Logout</span></div>
+  </div>
+  <div class="dash-wrap">
+    <div class="sidebar">
+      <div class="s-user">
+        <div class="avatar">👤</div>
+        <div class="s-name">Rahul Sharma</div>
+        <div class="s-role">Class 10 — Science</div>
+      </div>
+      <ul>
+        <li class="active">🏠 Dashboard</li>
+        <li>📚 My Courses</li>
+        <li>📄 Notes & PDFs</li>
+        <li>🎥 Video Lectures</li>
+        <li>🎙️ Live Classes</li>
+        <li>🔔 Announcements</li>
+        <li>⚙️ My Profile</li>
+      </ul>
+    </div>
+    <div class="dash-main">
+      <h2>Welcome back, Rahul 👋</h2>
+      <div class="sub">Here's your activity summary for this month.</div>
+      <div class="stat-row">
+        <div class="stat-card"><div class="num">4</div><div class="lbl">Enrolled Courses</div></div>
+        <div class="stat-card"><div class="num">12</div><div class="lbl">Notes Downloaded</div></div>
+        <div class="stat-card"><div class="num">8</div><div class="lbl">Videos Watched</div></div>
+        <div class="stat-card"><div class="num">3</div><div class="lbl">Live Classes</div></div>
+      </div>
+
+      <!-- Upcoming Class -->
+      <div class="section-label" style="padding:0 0 10px;">Upcoming Live Class</div>
+      <div class="zoom-card" style="margin-bottom:20px;">
+        <div class="zoom-badge"><div class="zdate">15</div><div class="zmon">JUN</div></div>
+        <div class="zoom-details">
+          <h4>Mathematics — Quadratic Equations (Zoom)</h4>
+          <p>Time: 4:00 PM – 5:30 PM &nbsp;|&nbsp; Instructor: Mr. Rajesh Kumar &nbsp;|&nbsp; Meeting ID: 892 4567 1234</p>
+        </div>
+        <button class="zoom-join">JOIN ZOOM</button>
+      </div>
+
+      <!-- Recent Materials -->
+      <div class="section-label" style="padding:0 0 10px;">Recently Accessed Materials</div>
+      <div class="recent-table">
+        <div class="t-head"><span>Material</span><span>Subject</span><span>Type</span><span>Status</span></div>
+        <div class="t-row"><span>Chapter 5 – Quadratic Eq.</span><span>Mathematics</span><span>PDF Note</span><span><span class="badge-pill badge-green">Downloaded</span></span></div>
+        <div class="t-row"><span>Newton's Laws of Motion</span><span>Physics</span><span>Video</span><span><span class="badge-pill badge-green">Watched</span></span></div>
+        <div class="t-row"><span>The French Revolution</span><span>History</span><span>PDF Note</span><span><span class="badge-pill badge-yellow">Pending</span></span></div>
+        <div class="t-row"><span>Photosynthesis Explained</span><span>Biology</span><span>Video</span><span><span class="badge-pill badge-gray">Not Started</span></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== COURSES ===================== -->
+<div id="courses" class="nav-page"><h2>Screen 5 — Course Categories</h2></div>
+<div class="page">
+  <div class="topbar">
+    <div class="logo">📚 StudyPortal</div>
+    <div class="nav-links"><span>Home</span><span class="active">Courses</span><span>Notes</span><span>Videos</span></div>
+  </div>
+  <div class="page-title-bar">
+    <h2>All Course Categories</h2>
+    <span class="breadcrumb">Home &rsaquo; Courses</span>
+  </div>
+  <div class="search-bar">
+    <div class="s-input">🔍  Search courses, subjects, topics...</div>
+    <button class="s-btn">SEARCH</button>
+  </div>
+  <div class="filter-row">
+    <span>Filter by Class:</span>
+    <span class="filter-chip active">All</span>
+    <span class="filter-chip">Class 6</span>
+    <span class="filter-chip">Class 7</span>
+    <span class="filter-chip">Class 8</span>
+    <span class="filter-chip">Class 9</span>
+    <span class="filter-chip">Class 10</span>
+    <span class="filter-chip">Class 11</span>
+    <span class="filter-chip">Class 12</span>
+  </div>
+  <div class="grid grid-3">
+    <div class="card">
+      <div class="icon-box">➗</div>
+      <h3>Mathematics</h3>
+      <p>Algebra, Geometry, Trigonometry, Calculus, Statistics</p>
+      <div style="margin-top:12px;font-size:11px;color:#aaa;font-family:sans-serif;">24 Notes &nbsp;|&nbsp; 18 Videos &nbsp;|&nbsp; 3 Live Classes</div>
+      <div style="margin-top:10px;border:1.5px solid #333;display:inline-block;padding:5px 16px;font-size:11px;cursor:pointer;border-radius:2px;">View Materials →</div>
+    </div>
+    <div class="card">
+      <div class="icon-box">⚗️</div>
+      <h3>Physics</h3>
+      <p>Mechanics, Optics, Thermodynamics, Electricity, Modern Physics</p>
+      <div style="margin-top:12px;font-size:11px;color:#aaa;font-family:sans-serif;">19 Notes &nbsp;|&nbsp; 22 Videos &nbsp;|&nbsp; 2 Live Classes</div>
+      <div style="margin-top:10px;border:1.5px solid #333;display:inline-block;padding:5px 16px;font-size:11px;cursor:pointer;border-radius:2px;">View Materials →</div>
+    </div>
+    <div class="card">
+      <div class="icon-box">🧪</div>
+      <h3>Chemistry</h3>
+      <p>Organic, Inorganic, Physical Chemistry, Periodic Table</p>
+      <div style="margin-top:12px;font-size:11px;color:#aaa;font-family:sans-serif;">16 Notes &nbsp;|&nbsp; 14 Videos &nbsp;|&nbsp; 2 Live Classes</div>
+      <div style="margin-top:10px;border:1.5px solid #333;display:inline-block;padding:5px 16px;font-size:11px;cursor:pointer;border-radius:2px;">View Materials →</div>
+    </div>
+    <div class="card">
+      <div class="icon-box">🌿</div>
+      <h3>Biology</h3>
+      <p>Cell Biology, Genetics, Ecology, Human Physiology</p>
+      <div style="margin-top:12px;font-size:11px;color:#aaa;font-family:sans-serif;">21 Notes &nbsp;|&nbsp; 16 Videos &nbsp;|&nbsp; 1 Live Class</div>
+      <div style="margin-top:10px;border:1.5px solid #333;display:inline-block;padding:5px 16px;font-size:11px;cursor:pointer;border-radius:2px;">View Materials →</div>
+    </div>
+    <div class="card">
+      <div class="icon-box">🔤</div>
+      <h3>English</h3>
+      <p>Grammar, Comprehension, Literature, Creative Writing</p>
+      <div style="margin-top:12px;font-size:11px;color:#aaa;font-family:sans-serif;">22 Notes &nbsp;|&nbsp; 10 Videos &nbsp;|&nbsp; 1 Live Class</div>
+      <div style="margin-top:10px;border:1.5px solid #333;display:inline-block;padding:5px 16px;font-size:11px;cursor:pointer;border-radius:2px;">View Materials →</div>
+    </div>
+    <div class="card">
+      <div class="icon-box">🌍</div>
+      <h3>Social Studies</h3>
+      <p>History, Geography, Political Science, Economics</p>
+      <div style="margin-top:12px;font-size:11px;color:#aaa;font-family:sans-serif;">18 Notes &nbsp;|&nbsp; 8 Videos &nbsp;|&nbsp; 1 Live Class</div>
+      <div style="margin-top:10px;border:1.5px solid #333;display:inline-block;padding:5px 16px;font-size:11px;cursor:pointer;border-radius:2px;">View Materials →</div>
+    </div>
+  </div>
+  <hr class="divider"/>
+  <div class="footer"><span>© 2024 StudyPortal</span><span>500+ Study Materials Available</span></div>
+</div>
+
+<!-- ===================== NOTES / PDF ===================== -->
+<div id="notes" class="nav-page"><h2>Screen 6 — Notes & PDF Download</h2></div>
+<div class="page">
+  <div class="topbar">
+    <div class="logo">📚 StudyPortal</div>
+    <div class="nav-links"><span>Home</span><span>Courses</span><span class="active">Notes</span><span>Videos</span></div>
+  </div>
+  <div class="page-title-bar">
+    <h2>Study Notes & PDF Downloads</h2>
+    <span class="breadcrumb">Home &rsaquo; Courses &rsaquo; Mathematics &rsaquo; Notes</span>
+  </div>
+  <div class="search-bar">
+    <div class="s-input">🔍  Search notes by subject, chapter, or keyword...</div>
+    <button class="s-btn">SEARCH</button>
+  </div>
+  <div class="filter-row">
+    <span class="filter-chip active">All Subjects</span>
+    <span class="filter-chip">Mathematics</span>
+    <span class="filter-chip">Physics</span>
+    <span class="filter-chip">Chemistry</span>
+    <span class="filter-chip">Biology</span>
+    <span class="filter-chip">English</span>
+  </div>
+
+  <!-- PDF List -->
+  <div class="pdf-row">
+    <div class="pdf-icon">📄</div>
+    <div class="pdf-info"><h4>Chapter 5 – Quadratic Equations</h4><span>Mathematics &nbsp;|&nbsp; Class 10 &nbsp;|&nbsp; 2.4 MB &nbsp;|&nbsp; Uploaded: 10 Jun 2024</span></div>
+    <div class="pdf-dl">⬇ Download PDF</div>
+  </div>
+  <div class="pdf-row">
+    <div class="pdf-icon">📄</div>
+    <div class="pdf-info"><h4>Newton's Laws of Motion – Complete Notes</h4><span>Physics &nbsp;|&nbsp; Class 10 &nbsp;|&nbsp; 3.1 MB &nbsp;|&nbsp; Uploaded: 8 Jun 2024</span></div>
+    <div class="pdf-dl">⬇ Download PDF</div>
+  </div>
+  <div class="pdf-row">
+    <div class="pdf-icon">📄</div>
+    <div class="pdf-info"><h4>Periodic Table – Reference Sheet</h4><span>Chemistry &nbsp;|&nbsp; Class 10 &nbsp;|&nbsp; 1.2 MB &nbsp;|&nbsp; Uploaded: 5 Jun 2024</span></div>
+    <div class="pdf-dl">⬇ Download PDF</div>
+  </div>
+  <div class="pdf-row">
+    <div class="pdf-icon">📄</div>
+    <div class="pdf-info"><h4>The French Revolution – Summary Notes</h4><span>History &nbsp;|&nbsp; Class 10 &nbsp;|&nbsp; 1.8 MB &nbsp;|&nbsp; Uploaded: 3 Jun 2024</span></div>
+    <div class="pdf-dl">⬇ Download PDF</div>
+  </div>
+  <div class="pdf-row">
+    <div class="pdf-icon">📄</div>
+    <div class="pdf-info"><h4>Photosynthesis – Diagram + Notes</h4><span>Biology &nbsp;|&nbsp; Class 10 &nbsp;|&nbsp; 2.0 MB &nbsp;|&nbsp; Uploaded: 1 Jun 2024</span></div>
+    <div class="pdf-dl">⬇ Download PDF</div>
+  </div>
+  <div class="pdf-row">
+    <div class="pdf-icon">📄</div>
+    <div class="pdf-info"><h4>English Grammar – Tenses Complete Guide</h4><span>English &nbsp;|&nbsp; Class 9 &nbsp;|&nbsp; 1.5 MB &nbsp;|&nbsp; Uploaded: 30 May 2024</span></div>
+    <div class="pdf-dl">⬇ Download PDF</div>
+  </div>
+
+  <hr class="divider"/>
+  <div class="footer"><span>© 2024 StudyPortal</span><span>Login required to download PDFs</span></div>
+</div>
+
+<!-- ===================== VIDEOS ===================== -->
+<div id="videos" class="nav-page"><h2>Screen 7 — Video Lectures</h2></div>
+<div class="page">
+  <div class="topbar">
+    <div class="logo">📚 StudyPortal</div>
+    <div class="nav-links"><span>Home</span><span>Courses</span><span>Notes</span><span class="active">Videos</span></div>
+  </div>
+  <div class="page-title-bar">
+    <h2>Video Lectures</h2>
+    <span class="breadcrumb">Home &rsaquo; Videos &rsaquo; Mathematics</span>
+  </div>
+  <div class="video-wrap">
+    <div class="video-main">
+      <!-- Main Video Player -->
+      <div class="video-placeholder">
+        <div class="play">▶</div>
+        <div>YouTube Video Player (Embedded)</div>
+        <div style="font-size:11px;margin-top:4px;color:#666;">Chapter 5 – Quadratic Equations | 45:22</div>
+      </div>
+      <h3 style="font-size:15px;margin-bottom:6px;">Quadratic Equations – Full Explanation with Examples</h3>
+      <p style="font-size:12px;color:#888;font-family:sans-serif;margin-bottom:12px;">Subject: Mathematics &nbsp;|&nbsp; Class: 10 &nbsp;|&nbsp; Duration: 45:22 &nbsp;|&nbsp; Uploaded: 10 Jun 2024</p>
+      <div style="font-size:12px;font-family:sans-serif;color:#555;line-height:1.7;">
+        In this lecture, we cover all methods to solve quadratic equations including factoring, completing the square, and the quadratic formula. Suitable for Class 10 students preparing for board exams.
+      </div>
+    </div>
+    <div class="video-sidebar">
+      <h4>More Lectures</h4>
+      <div class="vid-item">
+        <div class="vid-thumb">▶</div>
+        <div class="vid-info"><h5>Linear Equations in Two Variables</h5><span>Math &nbsp;|&nbsp; 38:10</span></div>
+      </div>
+      <div class="vid-item">
+        <div class="vid-thumb">▶</div>
+        <div class="vid-info"><h5>Newton's Laws of Motion</h5><span>Physics &nbsp;|&nbsp; 52:40</span></div>
+      </div>
+      <div class="vid-item">
+        <div class="vid-thumb">▶</div>
+        <div class="vid-info"><h5>Photosynthesis Explained</h5><span>Biology &nbsp;|&nbsp; 29:15</span></div>
+      </div>
+      <div class="vid-item">
+        <div class="vid-thumb">▶</div>
+        <div class="vid-info"><h5>The French Revolution</h5><span>History &nbsp;|&nbsp; 44:00</span></div>
+      </div>
+      <div class="vid-item">
+        <div class="vid-thumb">▶</div>
+        <div class="vid-info"><h5>Periodic Table Overview</h5><span>Chemistry &nbsp;|&nbsp; 33:50</span></div>
+      </div>
+      <div class="vid-item">
+        <div class="vid-thumb">▶</div>
+        <div class="vid-info"><h5>English – Active vs Passive Voice</h5><span>English &nbsp;|&nbsp; 22:30</span></div>
+      </div>
+    </div>
+  </div>
+  <hr class="divider"/>
+  <div class="footer"><span>© 2024 StudyPortal</span><span>All videos are embedded from YouTube</span></div>
+</div>
+
+<!-- ===================== ZOOM / LIVE CLASSES ===================== -->
+<div id="zoom" class="nav-page"><h2>Screen 8 — Zoom Live Classes</h2></div>
+<div class="page">
+  <div class="topbar">
+    <div class="logo">📚 StudyPortal</div>
+    <div class="nav-links"><span>Home</span><span>Dashboard</span><span class="active">Live Classes</span></div>
+  </div>
+  <div class="page-title-bar">
+    <h2>Scheduled Live Classes (Zoom)</h2>
+    <span class="breadcrumb">Home &rsaquo; Live Classes</span>
+  </div>
+
+  <div class="announce">
+    <span>📌 Note:</span> Click "JOIN ZOOM" button to enter the live class. Make sure you are logged in before joining.
+  </div>
+
+  <div class="grid grid-2">
+    <div class="zoom-card">
+      <div class="zoom-badge"><div class="zdate">15</div><div class="zmon">JUN</div></div>
+      <div class="zoom-details">
+        <h4>Mathematics – Quadratic Equations</h4>
+        <p>4:00 PM – 5:30 PM &nbsp;|&nbsp; Mr. Rajesh Kumar &nbsp;|&nbsp; ID: 892 4567 1234</p>
+      </div>
+      <button class="zoom-join">JOIN</button>
+    </div>
+    <div class="zoom-card">
+      <div class="zoom-badge"><div class="zdate">16</div><div class="zmon">JUN</div></div>
+      <div class="zoom-details">
+        <h4>Physics – Newton's Laws Revision</h4>
+        <p>5:00 PM – 6:00 PM &nbsp;|&nbsp; Ms. Priya Singh &nbsp;|&nbsp; ID: 745 3321 9988</p>
+      </div>
+      <button class="zoom-join">JOIN</button>
+    </div>
+    <div class="zoom-card" style="border-color:#ddd;opacity:0.7;">
+      <div class="zoom-badge" style="background:#f5f5f5;border-color:#ccc;"><div class="zdate" style="color:#999;">12</div><div class="zmon" style="color:#999;">JUN</div></div>
+      <div class="zoom-details">
+        <h4>Biology – Cell Division</h4>
+        <p>3:00 PM – 4:30 PM &nbsp;|&nbsp; Dr. Meena Rao &nbsp;|&nbsp; Completed</p>
+      </div>
+      <button class="zoom-join" style="background:#ccc;cursor:not-allowed;">ENDED</button>
+    </div>
+    <div class="zoom-card" style="border-color:#ddd;opacity:0.7;">
+      <div class="zoom-badge" style="background:#f5f5f5;border-color:#ccc;"><div class="zdate" style="color:#999;">10</div><div class="zmon" style="color:#999;">JUN</div></div>
+      <div class="zoom-details">
+        <h4>English – Tenses & Grammar</h4>
+        <p>4:30 PM – 5:30 PM &nbsp;|&nbsp; Mrs. Anjali Verma &nbsp;|&nbsp; Completed</p>
+      </div>
+      <button class="zoom-join" style="background:#ccc;cursor:not-allowed;">ENDED</button>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+  <div class="footer"><span>© 2024 StudyPortal</span><span>Live classes require login</span></div>
+</div>
+
+<!-- ===================== CONTACT ===================== -->
+<div id="contact" class="nav-page"><h2>Screen 9 — Contact Form</h2></div>
+<div class="page">
+  <div class="topbar">
+    <div class="logo">📚 StudyPortal</div>
+    <div class="nav-links"><span>Home</span><span>Courses</span><span class="active">Contact</span></div>
+  </div>
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <h2>Get In Touch</h2>
+      <p>Have questions about courses, study materials, or live classes? Reach out to us and we'll get back to you within 24 hours.</p>
+      <div class="contact-detail"><span>Email</span>support@studyportal.com</div>
+      <div class="contact-detail"><span>Phone</span>+91 98765 43210</div>
+      <div class="contact-detail"><span>Office Hours</span>Mon – Sat, 9 AM – 6 PM</div>
+      <div class="contact-detail"><span>Address</span>123, Education Street,<br/>New Delhi – 110001</div>
+    </div>
+    <div class="contact-form">
+      <h3>Send Us a Message</h3>
+      <div class="grid grid-2" style="padding:0;gap:12px;margin-bottom:12px;">
+        <div class="form-group" style="margin:0;">
+          <label>Your Name</label>
+          <div class="input-box">Full Name</div>
+        </div>
+        <div class="form-group" style="margin:0;">
+          <label>Email</label>
+          <div class="input-box">email@example.com</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Subject</label>
+        <div class="input-box">e.g. Question about Math notes</div>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <div class="input-box" style="height:100px;display:flex;align-items:flex-start;padding-top:10px;">Type your message here...</div>
+      </div>
+      <button class="btn-full">SEND MESSAGE →</button>
+    </div>
+  </div>
+  <hr class="divider"/>
+  <div class="footer"><span>© 2024 StudyPortal</span><span>We typically respond within 24 hours</span></div>
+</div>
+
+<!-- ===================== ADMIN PANEL ===================== -->
+<div id="admin" class="nav-page"><h2>Screen 10 — Admin Panel (Content Management)</h2></div>
+<div class="page">
+  <div class="admin-topbar">
+    <div class="logo">⚙️ StudyPortal — Admin</div>
+    <div style="font-size:12px;color:#aaa;">Logged in as: <strong style="color:#fff;">admin@studyportal.com</strong> &nbsp;|&nbsp; <span style="color:#e94560;cursor:pointer;">Logout</span></div>
+  </div>
+  <div class="admin-wrap">
+    <div class="admin-sidebar">
+      <ul>
+        <li class="active">📊 Dashboard</li>
+        <li>👥 Students</li>
+        <li>📚 Courses</li>
+        <li>📄 Notes / PDFs</li>
+        <li>🎥 Video Lectures</li>
+        <li>🎙️ Live Classes</li>
+        <li>📢 Announcements</li>
+        <li>📬 Contact Messages</li>
+        <li>⚙️ Settings</li>
+      </ul>
+    </div>
+    <div class="admin-main">
+      <h2>Admin Dashboard</h2>
+      <div class="sub">Overview of portal activity</div>
+
+      <!-- Stats -->
+      <div class="admin-stat-row">
+        <div class="admin-stat-card"><div class="num">1,248</div><div class="lbl">Total Students</div></div>
+        <div class="admin-stat-card"><div class="num">87</div><div class="lbl">Study Materials</div></div>
+        <div class="admin-stat-card"><div class="num">64</div><div class="lbl">Video Lectures</div></div>
+        <div class="admin-stat-card"><div class="num">12</div><div class="lbl">Live Classes</div></div>
+      </div>
+
+      <!-- Student Table -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+        <div style="font-size:13px;font-weight:bold;">Registered Students</div>
+        <div style="border:1.5px solid #333;padding:5px 16px;font-size:11px;cursor:pointer;border-radius:2px;">+ Add Student</div>
+      </div>
+      <div class="admin-table">
+        <div class="t-head">
+          <span>#</span><span>Name</span><span>Email</span><span>Class</span><span>Joined</span><span>Actions</span>
+        </div>
+        <div class="t-row">
+          <span>1</span><span>Rahul Sharma</span><span>rahul@email.com</span><span>Class 10</span><span>01 Jun</span>
+          <span><span class="action-btn edit">Edit</span><span class="action-btn del">Del</span></span>
+        </div>
+        <div class="t-row">
+          <span>2</span><span>Priya Patel</span><span>priya@email.com</span><span>Class 9</span><span>03 Jun</span>
+          <span><span class="action-btn edit">Edit</span><span class="action-btn del">Del</span></span>
+        </div>
+        <div class="t-row">
+          <span>3</span><span>Amit Singh</span><span>amit@email.com</span><span>Class 12</span><span>05 Jun</span>
+          <span><span class="action-btn edit">Edit</span><span class="action-btn del">Del</span></span>
+        </div>
+        <div class="t-row">
+          <span>4</span><span>Sneha Gupta</span><span>sneha@email.com</span><span>Class 11</span><span>08 Jun</span>
+          <span><span class="action-btn edit">Edit</span><span class="action-btn del">Del</span></span>
+        </div>
+      </div>
+
+      <!-- Mobile note -->
+      <div class="mobile-note" style="margin-top:20px;">
+        📱 Mobile Responsive Design — All screens adapt to phones and tablets (WordPress theme handles this automatically)
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+Only need wireframe
+i want to use wordpress platform
+
+Study Portal Features
+Student Registration & Login
+Student Dashboard
+Course Categories
+Subject-wise Notes Upload
+PDF Download Section
+Video Lectures (YouTube Embed)
+Search Functionality
+Zoom Meeting Integration for Live Classes
+Course/Study Material Management
+Admin Panel for Content Management
+Mobile Responsive Design
+Contact Form
+Announcement & Updates Section
+Short Description for Client
+
+We will develop a user-friendly Study Portal where students can register, log in, access study materials, download PDFs, watch video lectures, join Zoom live classes, and search content easily. The portal will include a complete admin panel to manage courses, notes, videos, and student resources.
